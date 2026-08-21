@@ -196,7 +196,7 @@ function App() {
                 </div>
 
                 <div>
-                  <strong>Chaveiro em São Caetano do Sul e região</strong>
+                  <strong>Qualidade e Segurança</strong>
                   <span>Serviço confiável</span>
                 </div>
               </div>
