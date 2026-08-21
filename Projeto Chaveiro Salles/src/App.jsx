@@ -396,7 +396,7 @@ function App() {
                   src={programacaoAutomotiva}
                   alt="Programação automotiva"
                   className="servico-image"
-                  reprogramacaoChave
+                  onClick={() => abrirImagem(programacaoAutomotiva)}
                 />
 
                 <div className="servico-content">
@@ -470,7 +470,11 @@ function App() {
 
             <div className="sobre-imagem">
               <div className="sobre-card">
-                <img src={imgSobre} alt="Salles Chaveiro" />
+                <img
+                  src={imgSobre}
+                  alt="Salles Chaveiro"
+                  onClick={() => abrirImagem(imgSobre)}
+                />
               </div>
 
               <div className="sobre-clientes">
