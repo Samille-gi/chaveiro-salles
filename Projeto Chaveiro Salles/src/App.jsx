@@ -35,6 +35,13 @@ import contato from "./assets/contato.png";
 
 function App() {
   const [menuAberto, setMenuAberto] = useState(false);
+  const [imagemAmpliada, setImagemAmpliada] = useState(null);
+
+  const abrirImagem = (imagem) => {
+    if (window.innerWidth <= 600) {
+      setImagemAmpliada(imagem);
+    }
+  };
 
   return (
     <>
@@ -233,6 +240,7 @@ function App() {
                   src={aberturaResidencia}
                   alt="Abertura de residências"
                   className="servico-image"
+                  onClick={() => abrirImagem(aberturaResidencia)}
                 />
 
                 <div className="servico-content">
@@ -256,6 +264,7 @@ function App() {
                   src={copiaChaveImovel}
                   alt="Cópia de chaves de imóveis"
                   className="servico-image"
+                  onClick={() => abrirImagem(copiaChaveImovel)}
                 />
 
                 <div className="servico-content">
@@ -277,6 +286,7 @@ function App() {
                   src={fechaduraSeguranca}
                   alt="Fechaduras de segurança"
                   className="servico-image"
+                  onClick={() => abrirImagem(fechaduraSeguranca)}
                 />
 
                 <div className="servico-content">
@@ -298,6 +308,7 @@ function App() {
                   src={instalacaoFechaduraDigital}
                   alt="Instalação de fechadura digital"
                   className="servico-image"
+                  onClick={() => abrirImagem(instalacaoFechaduraDigital)}
                 />
 
                 <div className="servico-content">
@@ -319,6 +330,7 @@ function App() {
                   src={aberturaCarro}
                   alt="Abertura de carros"
                   className="servico-image"
+                  onClick={() => abrirImagem(aberturaCarro)}
                 />
 
                 <div className="servico-content">
@@ -340,6 +352,7 @@ function App() {
                   src={copiaChavesAutomotiva}
                   alt="Cópia de chaves automotivas"
                   className="servico-image"
+                  onClick={() => abrirImagem(copiaChavesAutomotiva)}
                 />
 
                 <div className="servico-content">
@@ -361,6 +374,7 @@ function App() {
                   src={reprogramacaoChave}
                   alt="Reprogramação de chaves"
                   className="servico-image"
+                  onClick={() => abrirImagem(reprogramacaoChave)}
                 />
 
                 <div className="servico-content">
@@ -382,6 +396,7 @@ function App() {
                   src={programacaoAutomotiva}
                   alt="Programação automotiva"
                   className="servico-image"
+                  reprogramacaoChave
                 />
 
                 <div className="servico-content">
@@ -603,8 +618,27 @@ function App() {
 
         <span className="whatsapp-text">Fale Conosco</span>
       </a>
+
+      {/* LIGHTBOX */}
+      {imagemAmpliada && (
+        <div className="lightbox" onClick={() => setImagemAmpliada(null)}>
+          <button
+            className="lightbox-close"
+            onClick={() => setImagemAmpliada(null)}
+            aria-label="Fechar imagem"
+          >
+            ×
+          </button>
+
+          <img
+            src={imagemAmpliada}
+            alt="Imagem ampliada"
+            className="lightbox-image"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
     </>
   );
 }
-
 export default App;
