@@ -1,0 +1,2242 @@
+/* App.css
+=========================
+   RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  width: 100%;
+  height: 100px;
+
+  background-color: #ffffff;
+
+  position: relative;
+  z-index: 10;
+}
+
+.header-container {
+  width: 100%;
+  max-width: 1244px;
+  height: 95px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+
+  position: relative;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+  width: 282px;
+  height: 114px;
+
+  display: flex;
+  align-items: center;
+
+  position: absolute;
+  left: 0;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  z-index: 2;
+}
+
+.logo img {
+  width: 282px;
+  height: 114px;
+
+  object-fit: contain;
+
+  display: block;
+}
+
+/* =========================
+   NAVEGAÇÃO
+========================= */
+
+.navigation {
+  position: absolute;
+
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+
+  gap: 40px;
+}
+
+.navigation a {
+  color: var(--cinza-texto);
+
+  text-decoration: none;
+
+  font-size: 16px;
+  font-weight: 500;
+
+  white-space: nowrap;
+
+  transition: color 0.2s ease;
+}
+
+.navigation a:hover {
+  color: var(--azul);
+}
+
+/* =========================
+   BOTÃO TELEFONE
+========================= */
+
+.phone-button {
+  width: 254px;
+  height: 50px;
+
+  background-color: var(--laranja);
+
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  color: #ffffff;
+  text-decoration: none;
+
+  position: absolute;
+  right: 0;
+
+  transition: background-color 0.2s ease;
+}
+
+.phone-button img {
+  width: 25px;
+  height: 25px;
+
+  object-fit: contain;
+}
+
+.phone-button span {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.phone-button:hover {
+  background-color: var(--laranja-claro);
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 1100px) {
+  .header-container {
+    padding: 0 30px;
+  }
+
+  .logo {
+    left: 30px;
+  }
+
+  .phone-button {
+    right: 30px;
+    width: 220px;
+  }
+
+  .navigation {
+    gap: 25px;
+  }
+}
+
+@media (max-width: 850px) {
+  .header {
+    height: auto;
+  }
+
+  .header-container {
+    min-height: 95px;
+
+    padding: 15px 25px;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+  }
+
+  .logo {
+    position: relative;
+
+    left: auto;
+    top: auto;
+
+    transform: none;
+
+    width: 220px;
+    height: 90px;
+  }
+
+  .logo img {
+    width: 220px;
+    height: 90px;
+  }
+
+  .navigation {
+    position: relative;
+
+    left: auto;
+    transform: none;
+
+    order: 3;
+
+    width: 100%;
+
+    justify-content: center;
+
+    padding-bottom: 10px;
+  }
+
+  .phone-button {
+    position: relative;
+
+    right: auto;
+
+    width: 220px;
+    height: 55px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-container {
+    justify-content: center;
+  }
+
+  .navigation {
+    gap: 18px;
+  }
+
+  .navigation a {
+    font-size: 14px;
+  }
+
+  .phone-button {
+    width: 210px;
+    height: 50px;
+  }
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  position: relative;
+
+  min-height: 473px;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  overflow: hidden;
+}
+
+/* CAMADA AZUL TRANSPARENTE */
+
+.hero-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background-color: rgba(18, 44, 89, 0.92);
+
+  z-index: 1;
+}
+
+/* CONTEÚDO */
+
+.hero-container {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 1244px;
+  min-height: 473px;
+
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 50px 0 45px;
+}
+
+.hero-content h1 {
+  color: #ffffff;
+
+  font-size: 44px;
+  line-height: 1.1;
+  font-weight: 700;
+
+  margin-bottom: 22px;
+}
+
+.hero-content p {
+  max-width: 850px;
+
+  color: #ffffff;
+
+  font-size: 18px;
+  line-height: 1.4;
+
+  margin-bottom: 25px;
+}
+
+/* BOTÕES */
+
+.hero-buttons {
+  display: flex;
+  gap: 70px;
+}
+
+.primary-button,
+.secondary-button {
+  width: 210px;
+  height: 57px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.primary-button {
+  background-color: var(--laranja);
+  color: #ffffff;
+}
+
+.secondary-button {
+  background-color: #ffffff;
+  color: #222222;
+}
+
+/* DIFERENCIAIS */
+
+.hero-differentials {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.differential {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  color: #ffffff;
+}
+
+.differential-icon {
+  width: 57px;
+  height: 57px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--laranja);
+
+  border-radius: 8px;
+}
+
+.differential-icon img {
+  width: 27px;
+  height: 27px;
+
+  object-fit: contain;
+}
+
+.differential strong,
+.differential span {
+  display: block;
+}
+
+.differential strong {
+  font-size: 17px;
+  font-weight: 600;
+
+  margin-bottom: 4px;
+}
+
+.differential span {
+  font-size: 16px;
+  color: #d8d8d8;
+}
+
+/* =========================
+    SERVIÇOS
+ ========================= */
+
+.servicos {
+  width: 100%;
+  background-color: #ffffff;
+
+  padding: 55px 0 70px;
+}
+
+.servicos-container {
+  width: 100%;
+  max-width: 1244px;
+
+  margin: 0 auto;
+}
+
+/* =========================
+   CABEÇALHO DA SEÇÃO
+========================= */
+
+.servicos-header {
+  text-align: center;
+
+  margin-bottom: 55px;
+}
+
+.servicos-header h2 {
+  color: #000000;
+
+  font-size: 36px;
+  font-weight: 700;
+
+  margin-bottom: 10px;
+}
+
+.servicos-header p {
+  color: #777777;
+
+  font-size: 20px;
+  font-weight: 400;
+}
+
+/* =========================
+   GRID DOS SERVIÇOS
+========================= */
+
+.servicos-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  column-gap: 18px;
+  row-gap: 14px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.servico-card {
+  background-color: #ffffff;
+
+  border: 1px solid #e5e5e5;
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.servico-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow: 0 7px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================
+   IMAGEM DO CARD
+========================= */
+
+.servico-image {
+  width: 100%;
+  height: 123px;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+/* =========================
+   CONTEÚDO DO CARD
+========================= */
+
+.servico-content {
+  padding: 0 15px 18px;
+}
+
+/* =========================
+   ÍCONE
+========================= */
+
+.servico-icon {
+  width: 38px;
+  height: 38px;
+
+  background-color: var(--laranja);
+
+  border-radius: 9px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 7px;
+  margin-bottom: 17px;
+}
+
+.servico-icon img {
+  width: 25px;
+  height: 25px;
+
+  object-fit: contain;
+
+  display: block;
+}
+
+/* =========================
+   TÍTULO DO CARD
+========================= */
+
+.servico-card h3 {
+  color: #222222;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  line-height: 1.3;
+
+  margin-bottom: 9px;
+}
+
+/* =========================
+   DESCRIÇÃO
+========================= */
+
+.servico-card p {
+  color: #777777;
+
+  font-size: 13px;
+  line-height: 1.4;
+
+  margin: 0;
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 1100px) {
+  .servicos-container {
+    padding: 0 30px;
+  }
+
+  .servicos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .servicos {
+    padding: 45px 0;
+  }
+
+  .servicos-container {
+    padding: 0 20px;
+  }
+
+  .servicos-header {
+    margin-bottom: 35px;
+  }
+
+  .servicos-header h2 {
+    font-size: 30px;
+  }
+
+  .servicos-header p {
+    font-size: 16px;
+  }
+
+  .servicos-grid {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+}
+
+/* =========================
+   SOBRE
+========================= */
+
+.sobre {
+  width: 100%;
+
+  background-color: #ffffff;
+
+  padding: 70px 0;
+}
+
+.sobre-container {
+  width: 100%;
+  max-width: 1244px;
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1.25fr 0.85fr;
+
+  gap: 70px;
+
+  align-items: center;
+}
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+.sobre-content h2 {
+  color: #000000;
+
+  font-size: 36px;
+  font-weight: 700;
+
+  margin-bottom: 25px;
+}
+
+.sobre-texto {
+  max-width: 590px;
+
+  color: #777777;
+
+  font-size: 20px;
+  line-height: 1.45;
+
+  margin-bottom: 38px;
+}
+
+/* =========================
+   DIFERENCIAIS
+========================= */
+
+.sobre-diferenciais {
+  display: flex;
+  flex-direction: column;
+
+  gap: 25px;
+}
+
+.sobre-item {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.sobre-icon {
+  width: 32px;
+  height: 32px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sobre-icon img {
+  width: 30px;
+  height: 30px;
+
+  object-fit: contain;
+}
+
+.sobre-item h3 {
+  color: #222222;
+
+  font-size: 20px;
+  font-weight: 600;
+
+  margin-bottom: 4px;
+}
+
+.sobre-item p {
+  color: #777777;
+
+  font-size: 16px;
+}
+
+/* =========================
+   IMAGEM
+========================= */
+
+.sobre-imagem {
+  position: relative;
+
+  min-height: 430px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sobre-card {
+  width: 100%;
+  max-width: 375px;
+
+  padding: 25px;
+
+  background-color: #ffffff;
+
+  border: 1px solid #e8e8e8;
+
+  border-radius: 15px;
+
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.sobre-card img {
+  width: 100%;
+  height: 320px;
+
+  object-fit: cover;
+
+  border-radius: 30px;
+
+  display: block;
+}
+
+/* =========================
+   CLIENTES
+========================= */
+
+.sobre-clientes {
+  position: absolute;
+
+  left: 0;
+  bottom: 20px;
+
+  width: 225px;
+  height: 128px;
+
+  background-color: var(--laranja);
+
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+
+  z-index: 2;
+}
+
+.sobre-clientes strong {
+  font-size: 36px;
+  font-weight: 500;
+
+  line-height: 1;
+
+  margin-bottom: 10px;
+}
+
+.sobre-clientes span {
+  font-size: 18px;
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 1100px) {
+  .sobre-container {
+    padding: 0 30px;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 40px;
+  }
+
+  .sobre-texto {
+    font-size: 18px;
+  }
+
+  .sobre-item h3 {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 800px) {
+  .sobre {
+    padding: 55px 0;
+  }
+
+  .sobre-container {
+    grid-template-columns: 1fr;
+  }
+
+  .sobre-content {
+    text-align: center;
+  }
+
+  .sobre-texto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .sobre-item {
+    text-align: left;
+  }
+
+  .sobre-imagem {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .sobre-container {
+    padding: 0 20px;
+  }
+
+  .sobre-content h2 {
+    font-size: 30px;
+  }
+
+  .sobre-texto {
+    font-size: 16px;
+  }
+
+  .sobre-item h3 {
+    font-size: 17px;
+  }
+
+  .sobre-item p {
+    font-size: 14px;
+  }
+
+  .sobre-card {
+    padding: 18px;
+  }
+
+  .sobre-card img {
+    height: 270px;
+  }
+
+  .sobre-clientes {
+    width: 190px;
+    height: 110px;
+
+    left: -5px;
+  }
+
+  .sobre-clientes strong {
+    font-size: 30px;
+  }
+
+  .sobre-clientes span {
+    font-size: 15px;
+  }
+}
+
+/* =========================
+   CONTATO
+========================= */
+
+.contato {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 65px 0 70px;
+}
+
+.contato-container {
+  width: 100%;
+  max-width: 1244px;
+  margin: 0 auto;
+}
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.contato-header {
+  text-align: center;
+  margin-bottom: 38px;
+}
+
+.contato-header h2 {
+  color: #000000;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 22px;
+}
+
+.contato-header p {
+  color: #777777;
+  font-size: 20px;
+  line-height: 1.45;
+}
+
+/* =========================
+   PARTE SUPERIOR
+========================= */
+
+.contato-topo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+  margin-bottom: 77px;
+}
+
+.contato-texto {
+  padding-left: 0;
+}
+
+.contato-texto h3 {
+  color: #444444;
+  font-size: 26px;
+  font-weight: 500;
+  margin-bottom: 13px;
+}
+
+.contato-texto p {
+  color: #777777;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+/* =========================
+   ATENDIMENTO EMERGENCIAL
+========================= */
+
+.contato-emergencial {
+  min-height: 135px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background-color: rgba(245, 158, 11, 0.12);
+
+  border: 1px solid var(--laranja);
+  border-radius: 14px;
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.contato-emergencial h3 {
+  color: #444444;
+  font-size: 23px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.contato-emergencial p {
+  color: #777777;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+/* =========================
+   INFORMAÇÕES
+========================= */
+
+.contato-informacoes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 35px;
+}
+
+.contato-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  text-decoration: none;
+}
+
+.contato-icon {
+  width: 57px;
+  height: 57px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--laranja);
+  border-radius: 10px;
+}
+
+.contato-icon img {
+  width: 27px;
+  height: 27px;
+  object-fit: contain;
+}
+
+.contato-item strong,
+.contato-item span {
+  display: block;
+}
+
+.contato-item strong {
+  color: #222222;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.contato-item span {
+  color: #777777;
+  font-size: 16px;
+}
+
+/* =========================
+   HOVER
+========================= */
+
+.contato-item:hover .contato-icon {
+  background-color: var(--laranja-claro);
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 1100px) {
+  .contato-container {
+    padding: 0 30px;
+  }
+
+  .contato-topo {
+    gap: 40px;
+  }
+
+  .contato-informacoes {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 35px;
+  }
+}
+
+@media (max-width: 800px) {
+  .contato {
+    padding: 55px 0;
+  }
+
+  .contato-topo {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-bottom: 50px;
+  }
+
+  .contato-texto {
+    text-align: center;
+  }
+
+  .contato-informacoes {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .contato-container {
+    padding: 0 20px;
+  }
+
+  .contato-header {
+    margin-bottom: 35px;
+  }
+
+  .contato-header h2 {
+    font-size: 30px;
+  }
+
+  .contato-header p {
+    font-size: 16px;
+  }
+
+  .contato-texto h3 {
+    font-size: 22px;
+  }
+
+  .contato-texto p {
+    font-size: 16px;
+  }
+
+  .contato-emergencial {
+    padding: 20px 15px;
+  }
+
+  .contato-emergencial h3 {
+    font-size: 20px;
+  }
+
+  .contato-emergencial p {
+    font-size: 15px;
+  }
+
+  .contato-informacoes {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  width: 100%;
+  background-color: var(--azul-principal);
+  color: #ffffff;
+  padding: 38px 0 48px;
+}
+
+.footer-container {
+  width: 100%;
+  max-width: 1244px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 2.1fr 1fr 1fr 1fr;
+
+  column-gap: 70px;
+}
+
+/* =========================
+   LOGO / MARCA
+========================= */
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-brand img {
+  width: 220px;
+  height: auto;
+  object-fit: contain;
+
+  margin-bottom: 18px;
+}
+
+.footer-brand p {
+  color: #a8a8a8;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.footer-brand strong {
+  color: #a8a8a8;
+  font-weight: 700;
+}
+
+/* =========================
+   COLUNAS
+========================= */
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-column h3 {
+  color: #ffffff;
+
+  font-size: 20px;
+  font-weight: 700;
+
+  margin-bottom: 18px;
+}
+
+.footer-column a {
+  width: fit-content;
+
+  color: #a8a8a8;
+
+  font-size: 17px;
+  font-weight: 600;
+
+  margin-bottom: 12px;
+
+  transition: color 0.2s ease;
+}
+
+.footer-column a:hover {
+  color: #ffffff;
+}
+
+/* =========================
+   CONTATO
+========================= */
+
+.footer-contato a {
+  font-weight: 500;
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 1100px) {
+  .footer-container {
+    padding: 0 30px;
+
+    grid-template-columns: 1.8fr 1fr 1fr 1fr;
+
+    column-gap: 35px;
+  }
+}
+
+@media (max-width: 800px) {
+  .footer {
+    padding: 45px 0;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+
+    row-gap: 40px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-container {
+    padding: 0 20px;
+
+    grid-template-columns: 1fr;
+
+    row-gap: 30px;
+  }
+
+  .footer-brand {
+    grid-column: auto;
+  }
+
+  .footer-brand img {
+    width: 200px;
+  }
+
+  .footer-brand p {
+    font-size: 15px;
+  }
+
+  .footer-column h3 {
+    font-size: 18px;
+  }
+
+  .footer-column a {
+    font-size: 15px;
+  }
+}
+
+/* =========================
+   MENU MOBILE
+========================= */
+
+.menu-button {
+  display: none;
+}
+
+/* =========================
+   HEADER - CELULAR
+========================= */
+
+@media (max-width: 600px) {
+  .header {
+    height: 68px;
+  }
+
+  .header-container {
+    height: 68px;
+    min-height: 68px;
+
+    padding: 0 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    flex-wrap: nowrap;
+  }
+
+  .logo {
+    position: relative;
+
+    left: auto;
+    top: auto;
+
+    transform: none;
+
+    width: 145px;
+    height: 60px;
+  }
+
+  .logo img {
+    width: 145px;
+    height: 60px;
+
+    object-fit: contain;
+  }
+
+  /* Esconde os links */
+  .navigation {
+    display: none;
+  }
+
+  /* Esconde o telefone */
+  .phone-button {
+    display: none;
+  }
+
+  /* Mostra o botão do menu */
+  .menu-button {
+    display: block;
+
+    border: none;
+    background: transparent;
+
+    color: #000000;
+
+    font-size: 34px;
+    line-height: 1;
+
+    padding: 0;
+
+    cursor: pointer;
+  }
+}
+
+/* =========================
+   HERO - CELULAR
+========================= */
+
+@media (max-width: 600px) {
+  .hero {
+    min-height: 510px;
+
+    background-position: center;
+  }
+
+  .hero-container {
+    min-height: 510px;
+
+    padding: 58px 10px 30px;
+
+    justify-content: flex-start;
+  }
+
+  /* =========================
+     CONTEÚDO
+  ========================= */
+
+  .hero-content h1 {
+    font-size: 22px;
+    line-height: 1.15;
+
+    margin-bottom: 14px;
+  }
+
+  .hero-content p {
+    max-width: 100%;
+
+    font-size: 11px;
+    line-height: 1.4;
+
+    margin-bottom: 28px;
+  }
+
+  /* =========================
+     BOTÕES
+  ========================= */
+
+  .hero-buttons {
+    width: 100%;
+
+    gap: 25px;
+
+    justify-content: center;
+  }
+
+  .primary-button,
+  .secondary-button {
+    width: 130px;
+    height: 36px;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+  }
+
+  /* =========================
+     DIFERENCIAIS
+  ========================= */
+
+  .hero-differentials {
+    width: 100%;
+
+    margin-top: 53px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 10px;
+  }
+
+  .differential {
+    gap: 10px;
+  }
+
+  .differential-icon {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 9px;
+  }
+
+  .differential-icon img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .differential strong {
+    font-size: 13px;
+
+    margin-bottom: 3px;
+  }
+
+  .differential span {
+    font-size: 11px;
+  }
+}
+/* =========================
+   SERVIÇOS - CELULAR
+========================= */
+
+@media (max-width: 600px) {
+  .servicos {
+    padding: 38px 0 45px;
+  }
+
+  .servicos-container {
+    padding: 0 10px;
+  }
+
+  /* Cabeçalho */
+
+  .servicos-header {
+    margin-bottom: 28px;
+  }
+
+  .servicos-header h2 {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  .servicos-header p {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  /* Grid */
+
+  .servicos-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    column-gap: 10px;
+    row-gap: 12px;
+  }
+
+  /* Cards */
+
+  .servico-card {
+    border-radius: 10px;
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  }
+
+  .servico-card:hover {
+    transform: none;
+  }
+
+  /* Imagem */
+
+  .servico-image {
+    height: 90px;
+  }
+
+  /* Conteúdo */
+
+  .servico-content {
+    padding: 0 9px 12px;
+  }
+
+  /* Ícone */
+
+  .servico-icon {
+    width: 32px;
+    height: 32px;
+
+    margin-top: 6px;
+    margin-bottom: 9px;
+
+    border-radius: 7px;
+  }
+
+  .servico-icon img {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Título */
+
+  .servico-card h3 {
+    font-size: 12px;
+    line-height: 1.25;
+
+    margin-bottom: 6px;
+  }
+
+  /* Descrição */
+
+  .servico-card p {
+    font-size: 10px;
+    line-height: 1.35;
+  }
+}
+
+/* =========================
+   SOBRE - CELULAR
+========================= */
+
+@media (max-width: 600px) {
+  .sobre {
+    padding: 45px 0 50px;
+  }
+
+  .sobre-container {
+    padding: 0 20px;
+
+    display: grid;
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+  /* =========================
+     CONTEÚDO
+  ========================= */
+
+  .sobre-content {
+    text-align: left;
+  }
+
+  .sobre-content h2 {
+    font-size: 25px;
+    line-height: 1.2;
+
+    margin-bottom: 18px;
+  }
+
+  .sobre-texto {
+    max-width: 100%;
+
+    font-size: 15px;
+    line-height: 1.5;
+
+    margin-bottom: 30px;
+  }
+
+  /* =========================
+     DIFERENCIAIS
+  ========================= */
+
+  .sobre-diferenciais {
+    gap: 20px;
+  }
+
+  .sobre-item {
+    gap: 10px;
+
+    align-items: flex-start;
+  }
+
+  .sobre-icon {
+    width: 28px;
+    height: 28px;
+
+    flex-shrink: 0;
+  }
+
+  .sobre-icon img {
+    width: 26px;
+    height: 26px;
+  }
+
+  .sobre-item h3 {
+    font-size: 16px;
+    line-height: 1.25;
+
+    margin-bottom: 4px;
+  }
+
+  .sobre-item p {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  /* =========================
+     IMAGEM
+  ========================= */
+
+  .sobre-imagem {
+    min-height: auto;
+
+    margin-top: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sobre-card {
+    width: 100%;
+    max-width: 280px;
+
+    padding: 14px;
+
+    border-radius: 12px;
+  }
+
+  .sobre-card img {
+    width: 100%;
+    height: 240px;
+
+    border-radius: 20px;
+
+    object-fit: cover;
+  }
+
+  /* =========================
+     CLIENTES
+  ========================= */
+
+  .sobre-clientes {
+    width: 145px;
+    height: 82px;
+
+    left: 5px;
+    bottom: 10px;
+
+    border-radius: 8px;
+  }
+
+  .sobre-clientes strong {
+    font-size: 25px;
+
+    margin-bottom: 5px;
+  }
+
+  .sobre-clientes span {
+    font-size: 12px;
+  }
+}
+/* =========================
+   CONTATO - CELULAR
+========================= */
+
+@media (max-width: 600px) {
+  .contato {
+    padding: 42px 0 48px;
+  }
+
+  .contato-container {
+    padding: 0 20px;
+  }
+
+  /* CABEÇALHO */
+
+  .contato-header {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .contato-header h2 {
+    font-size: 25px;
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+
+  .contato-header p {
+    font-size: 15px;
+    line-height: 1.45;
+  }
+
+  /* TEXTO */
+
+  .contato-texto {
+    text-align: center;
+    margin-bottom: 28px;
+  }
+
+  .contato-texto h3 {
+    font-size: 20px;
+    line-height: 1.3;
+    margin-bottom: 9px;
+  }
+
+  .contato-texto p {
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  /* INFORMAÇÕES */
+
+  .contato-informacoes {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+
+    margin-bottom: 32px;
+  }
+
+  .contato-item {
+    gap: 12px;
+  }
+
+  .contato-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+  }
+
+  .contato-icon img {
+    width: 23px;
+    height: 23px;
+  }
+
+  .contato-item strong {
+    font-size: 15px;
+    margin-bottom: 3px;
+  }
+
+  .contato-item span {
+    font-size: 13px;
+  }
+
+  /* ATENDIMENTO EMERGENCIAL */
+
+  .contato-emergencial {
+    width: 100%;
+    min-height: 125px;
+
+    padding: 20px 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    border-radius: 12px;
+  }
+
+  .contato-emergencial h3 {
+    font-size: 19px;
+    margin-bottom: 8px;
+  }
+
+  .contato-emergencial p {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+}
+
+/* =========================
+   FOOTER - CELULAR
+========================= */
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 38px 0 45px;
+  }
+
+  .footer-container {
+    width: 100%;
+    padding: 0 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 30px;
+  }
+
+  /* =========================
+     LOGO
+  ========================= */
+
+  .footer-brand {
+    width: 100%;
+  }
+
+  .footer-brand img {
+    width: 225px;
+    height: auto;
+
+    margin-bottom: 14px;
+  }
+
+  .footer-brand p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* =========================
+     COLUNAS
+  ========================= */
+
+  .footer-column {
+    width: 100%;
+  }
+
+  .footer-column h3 {
+    font-size: 17px;
+
+    margin-bottom: 13px;
+  }
+
+  .footer-column a {
+    font-size: 14px;
+
+    margin-bottom: 9px;
+  }
+
+  /* =========================
+     CONTATO
+  ========================= */
+
+  .footer-contato a {
+    font-size: 14px;
+  }
+
+  .contato-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contato-topo {
+    display: contents;
+  }
+
+  .contato-header {
+    order: 1;
+  }
+
+  .contato-texto {
+    order: 2;
+    text-align: left;
+  }
+
+  .contato-informacoes {
+    order: 3;
+  }
+
+  .contato-emergencial {
+    order: 4;
+  }
+}
+/* =========================
+   MENU LATERAL MOBILE
+========================= */
+
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  /* FUNDO ESCURO */
+  .mobile-menu {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+
+    background-color: rgba(0, 0, 0, 0.45);
+  }
+
+  /* =========================
+     PAINEL
+  ========================= */
+
+  .mobile-menu-panel {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 75%;
+    height: 100%;
+
+    background-color: #ffffff;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 25px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.12);
+  }
+
+  /* =========================
+     CABEÇALHO
+  ========================= */
+
+  .mobile-menu-header {
+    width: 100%;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    margin-bottom: 35px;
+  }
+
+  /* LOGO */
+
+  .mobile-menu-logo {
+    width: 145px !important;
+    height: auto !important;
+
+    max-width: none !important;
+
+    object-fit: contain;
+
+    margin: 0;
+  }
+
+  /* =========================
+     BOTÃO FECHAR
+  ========================= */
+
+  .mobile-menu-close {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #dddddd;
+    border-radius: 50%;
+
+    background-color: #ffffff;
+
+    color: #444444;
+
+    font-size: 25px;
+    font-weight: 300;
+
+    line-height: 1;
+
+    padding: 0;
+
+    cursor: pointer;
+
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  .mobile-menu-close:hover {
+    background-color: #f5f5f5;
+    color: var(--azul-principal);
+    border-color: #cccccc;
+  }
+
+  /* =========================
+     NAVEGAÇÃO
+  ========================= */
+
+  .mobile-navigation {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+  }
+
+  /* ITEM */
+
+  .mobile-nav-item {
+    position: relative;
+
+    width: 100%;
+    min-height: 48px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 17px;
+
+    padding: 0 18px;
+
+    border-radius: 9px;
+
+    color: #444444;
+
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease;
+  }
+
+  /* ÍCONE */
+
+  .mobile-nav-item img {
+    width: 22px;
+    height: 22px;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+  }
+
+  /* HOVER */
+
+  .mobile-nav-item:hover {
+    background-color: #f5f5f5;
+  }
+
+  /* ITEM ATIVO */
+
+  .mobile-nav-item {
+    position: relative;
+
+    width: 100%;
+    min-height: 48px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 17px;
+
+    padding: 0 18px;
+
+    border-radius: 9px;
+
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: 500;
+  }
+  /* =========================
+     BOTÃO TELEFONE
+  ========================= */
+
+  .mobile-menu-phone {
+    margin-top: auto;
+
+    width: 100%;
+    height: 51px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    background-color: var(--laranja);
+
+    color: #ffffff;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    transition: background-color 0.2s ease;
+  }
+
+  .mobile-menu-phone:hover {
+    background-color: var(--laranja-claro);
+  }
+
+  .mobile-menu-phone img {
+    width: 24px;
+    height: 24px;
+
+    object-fit: contain;
+  }
+}
+/* =========================
+   WHATSAPP FLUTUANTE
+========================= */
+
+.whatsapp-float {
+  position: fixed;
+
+  right: 20px;
+  bottom: 20px;
+
+  width: 64px;
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+
+  background-color: #00c853;
+
+  border-radius: 50px;
+
+  color: #ffffff;
+  text-decoration: none;
+
+  overflow: hidden;
+
+  z-index: 9998;
+
+  transition:
+    width 0.3s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* ÍCONE */
+
+.whatsapp-icon {
+  width: 64px;
+  min-width: 64px;
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.whatsapp-icon svg {
+  width: 34px;
+  height: 34px;
+
+  fill: #ffffff;
+}
+
+/* TEXTO */
+
+.whatsapp-text {
+  white-space: nowrap;
+
+  font-size: 22px;
+  font-weight: 700;
+
+  opacity: 0;
+
+  transform: translateX(10px);
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.3s ease;
+}
+
+/* =========================
+   DESKTOP - HOVER
+========================= */
+
+@media (min-width: 601px) {
+  .whatsapp-float:hover {
+    width: 265px;
+
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+  }
+
+  .whatsapp-float:hover .whatsapp-text {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .whatsapp-float {
+    right: 16px;
+    bottom: 16px;
+
+    width: 64px;
+    height: 64px;
+  }
+
+  .whatsapp-icon {
+    width: 64px;
+    min-width: 64px;
+    height: 64px;
+  }
+
+  .whatsapp-text {
+    display: none;
+  }
+}
